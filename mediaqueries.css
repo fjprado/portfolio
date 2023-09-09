@@ -1,0 +1,9 @@
+@media screen and (min-width: 1200px) {
+    #desktop__nav {
+        display: flex;
+    }
+
+    #mobile__nav {
+        display: none;
+    }
+}
