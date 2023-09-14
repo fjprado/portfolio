@@ -1,9 +1,122 @@
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1400px) {
+    #profile {
+        height: 83vh;
+        margin-bottom: 6rem;
+    }
+
+    .about-container {
+       flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1200px) {
     #desktop__nav {
-        display: flex;
+        display: none;
     }
 
     #mobile__nav {
+        display: flex;
+    }
+
+    #experience, .experience-details-container {
+        margin-top: 2rem;
+    }
+
+    #profile, .section__container {
+        display: block;
+    }
+
+    .arrow {
         display: none;
+    }
+
+    section, .section__container {
+        height: fit-content;
+    }
+
+    section {
+        margin: 0 5%;
+    }
+
+    .section__pic-container {
+        width: 275px;
+        height: 275px;
+        margin: 0 auto 2rem;
+    }
+
+    .about-container {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #contact, footer {
+        height: 40vh;
+    }
+
+    #profile {
+        height: 83vh;
+        margin-bottom: 7%;
+    }
+
+    article {
+        font-size: 1rem;
+    }
+
+    footer nav {
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+
+    .about-container, 
+    .contact-info-upper-container, 
+    .btn-container {
+        flex-wrap: wrap;
+    }
+
+    .contact-info-container {
+        margin: 0;
+    }
+
+    .contact-info-container p,
+    .desktop__nav-links li a {
+        font-size: 1rem;
+    }
+
+    .experience-sub-title {
+        font-size: 1rem;
+    }
+
+    .logo { 
+        font-size: 1.5rem;
+    }
+
+    .desktop__nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .section__pic-container {
+        width: auto;
+        height: 46vw;
+        justify-content: center;
+    }
+
+    .about-pic {
+        transform: scale(1.5) translate(0, -5%);
+        clip-path: inset(2.75rem 2rem 1.25rem 2rem round 1rem);
+    }
+
+    .section__text-p2 {
+        font-size: 1.25rem;
+    }
+
+    .section__title {
+        font-size: 2rem;
+    }
+
+    .text-container {
+        text-align: justify;
     }
 }

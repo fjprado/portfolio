@@ -11,12 +11,12 @@
     <nav id="mobile__nav">
         <div class="logo">Fernando Prado</div>
         <div class="mobile__menu">
-            <div class="mobile__menu_icon" onclick="toggleMenu()">
+            <div class="mobile__menu-icon" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="mobile__menu_links">
+            <div class="mobile__menu-links">
                 <ul>
                     <li><a href="#about" onclick="toggleMenu()">About</a></li>
                     <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
@@ -29,14 +29,331 @@
     <nav id="desktop__nav">
         <div class="logo">Fernando Prado</div>
         <div>
-            <ul class="desktop__nav_links">
+            <ul class="desktop__nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>                
             </ul>
         </div>
-    </nav>    
+    </nav> 
+    <section id="profile">
+        <div class="section__pic-container">
+            <img 
+                class="profile-pic"
+                src="./assets/profile-pic.jpg" 
+                alt="Fernando Prado profile picture">
+        </div>
+        <div class="section__text">
+            <p class="section__text-p1">Hello, I'm </p>
+            <h1 class="section__title">Fernando Prado</h1>
+            <p class="section__text-p2">Full Stack Developer</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">Download CV</button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+            </div>
+            <div id="socials-container">
+                <img class="icon" src="./assets/linkedin.png" alt="My Linkedin profile" onclick="location.href='https://www.linkedin.com/in/fernandoprado-dev'">
+                <img class="icon" src="./assets/github.png" alt="My GitHub profile" onclick="location.href='https://github.com/fjprado'">
+            </div>
+        </div>
+    </section>  
+    <section id="about">
+        <p class="section__text-p1">Get To Know More</p>
+        <h1 class="section__title">About Me</h1>
+        <div class="section__container">
+            <div class="section__pic-container">
+                <img 
+                    class="about-pic"
+                    src="./assets/about-pic.jpg" 
+                    alt="Profile picture">
+            </div>
+            <div class="about-details-container">
+                <div class="about-container">
+                    <div class="details-container">
+                        <img 
+                            class="icon"
+                            src="./assets/experience.png" alt="Experience icon">
+                        <h3>Experience</h3>
+                        <p>3+ years <br /> Full Stack Development</p>
+                    </div>
+                    <div class="details-container">
+                        <img 
+                            class="icon"
+                            src="./assets/education.png" alt="Education icon">
+                        <h3>Education</h3>
+                        <p>Tech. Systems Analysis and Development Degree <br /> Tech. Business Administration Diploma</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>
+                        Specialized in Full Stack development using web technologies, such as Microsoft Azure, C# (ASP.Net MVC, .Net Core), Typescript (Angular), Javascript (React, Node.js), PostgreSQL, MongoDB, Git, TFS, and Azure DevOps. I have a degree in Systems Analysis and Development and I am also venturing into mobile technologies using Dart (Flutter).
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img 
+            class="icon arrow" 
+            src="./assets/arrow.png" 
+            alt="Arrow icon"
+            onclick="location.href='./#experience'">
+    </section>
+    <section id="experience">
+        <p class="section__text-p1">Explore My</p>
+        <h1 class="section__title">Experience</h1>
+        <div class="experience-details-container">
+            <div class="about-container">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Frontend Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>Angular</h3>
+                                <div class="bar bar-progress-4"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>React</h3>
+                                <div class="bar bar-progress-3"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>Javascript</h3>
+                                <div class="bar bar-progress-4"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>Typescript</h3>
+                                <div class="bar bar-progress-4"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>HTML</h3>
+                                <div class="bar bar-progress-5"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>CSS</h3>
+                                <div class="bar bar-progress-4"></div>
+                            </div>
+                        </article>
+                        
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>Material UI</h3>
+                                <div class="bar bar-progress-3"></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Backend Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>.Net Core</h3>
+                                <div class="bar bar-progress-5"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>C#</h3>
+                                <div class="bar bar-progress-5"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>Node.js</h3>
+                                <div class="bar bar-progress-2"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>Azure</h3>
+                                <div class="bar bar-progress-4"></div>
+                            </div>
+                        </article>                        
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>PostgreSQL</h3>
+                                <div class="bar bar-progress-4"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>SQL Server</h3>
+                                <div class="bar bar-progress-4"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>MongoDB</h3>
+                                <div class="bar bar-progress-1"></div>
+                            </div>
+                        </article>    
+                        <article>
+                            <img 
+                                class="icon"
+                                src="./assets/checkmark.png" alt="Experience icon">
+                            <div>
+                                <h3>Git</h3>
+                                <div class="bar bar-progress-4"></div>
+                            </div>
+                        </article>                     
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img 
+            class="icon arrow" 
+            src="./assets/arrow.png" 
+            alt="Arrow icon"
+            onclick="location.href='./#projects'">
+    </section>
+    <section id="projects">
+        <p class="section__text-p1">Browse My Recent</p>
+        <h1 class="section__title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-container">
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img 
+                            class="project-img"
+                            src="./assets/project-1.png" 
+                            alt="Project 1">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Project One</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href=''">
+                            GitHub
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href=''">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>   
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img 
+                            class="project-img"
+                            src="./assets/project-2.png" 
+                            alt="Project 2">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Project Two</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href=''">
+                            GitHub
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href=''">
+                            Live Demo
+                        </button>
+                    </div>
+                </div> 
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img 
+                            class="project-img"
+                            src="./assets/lol-champs.png" 
+                            alt="Project 3">
+                    </div>
+                    <h2 class="experience-sub-title project-title">League Of Legends - Champs</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/fjprado/lol-champs'">
+                            GitHub
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://fjprado.github.io/lol-champs'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>  
+            </div>        
+        </div>
+        <img 
+            class="icon arrow" 
+            src="./assets/arrow.png" 
+            alt="Arrow icon"
+            onclick="location.href='./#contact'">
+    </section>
+    <section id="contact">
+        <p class="section__text-p1">Get in Touch</p>
+        <h1 class="section__title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img 
+                    class="icon contact-icon email-icon" 
+                    src="./assets/email.png" 
+                    alt="Email icon" />
+                <p><a href="mailto:dev.fprado@gmail.com">dev.fprado@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img 
+                    class="icon contact-icon" 
+                    src="./assets/linkedin.png" 
+                    alt="Linkedin icon" />
+                <p><a href="https://www.linkedin.com/in/fernandoprado-dev/">Linkedin</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="desktop__nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>                
+                </ul>
+            </div>            
+        </nav>
+        <p>Copyright &#169; 2023 Fernando Prado. All Rights Reserved.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
