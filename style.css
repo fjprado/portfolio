@@ -23,6 +23,31 @@ a, .btn {
     transition: all 300ms ease;
 }
 
+/* Loader */
+#loader {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid rgb(63,81,181);
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* Mobile Nav */
 
 #mobile__nav {
@@ -322,6 +347,7 @@ section {
 
 #experience {
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .experience-details-container {
@@ -366,31 +392,31 @@ article .icon {
 
 .bar-progress-1 {
     background:
-    linear-gradient(rgb(63,81,181) 0 0) 0/20% no-repeat, linear-gradient(#bbb 0 0) 0/40% no-repeat
+    linear-gradient(rgb(255,10,10) 0 0) 0/20% no-repeat
     #ddd;
 }
 
 .bar-progress-2 {
     background:
-    linear-gradient(rgb(63,81,181) 0 0) 0/40% no-repeat, linear-gradient(#bbb 0 0) 0/60% no-repeat
+    linear-gradient(rgb(242,206,2) 0 0) 0/40% no-repeat
     #ddd;
 }
 
 .bar-progress-3 {
     background:
-    linear-gradient(rgb(63,81,181) 0 0) 0/60% no-repeat, linear-gradient(#bbb 0 0) 0/80% no-repeat
+    linear-gradient(rgb(235,255,10) 0 0) 0/60% no-repeat
     #ddd;
 }
 
 .bar-progress-4 {
     background:
-    linear-gradient(rgb(63,81,181) 0 0) 0/80% no-repeat, linear-gradient(#bbb 0 0) 0/100% no-repeat
+    linear-gradient(rgb(133,230,44) 0 0) 0/80% no-repeat
     #ddd;
 }
 
 .bar-progress-5 {
     background:
-    linear-gradient(rgb(63,81,181) 0 0) 0/100% no-repeat #ddd;
+    linear-gradient(rgb(32,156,5) 0 0) 0/100% no-repeat #ddd;
 }
 
 /* PROJECTS SECTION */
@@ -399,9 +425,14 @@ article .icon {
     position: relative;
 }
 
-.color-container {
+.project-container {
     border-color: rgb(163, 163, 163);
     background: rgb(250, 250, 250);
+}
+
+.project-container:hover {
+    transform: scale(1.2);
+    transition: 500ms ease;
 }
 
 .project-img {
@@ -426,7 +457,7 @@ article .icon {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 70vh;
+    height: 78vh;
 }
 
 .contact-info-upper-container {
