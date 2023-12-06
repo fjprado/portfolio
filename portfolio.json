@@ -1,131 +1,130 @@
 {
-    "profile" : {
-        "name": "Fernando Prado",
-        "role": "Full Stack Developer",
-        "profilePic": "./assets/profile-pic.jpg",
-        "cvPath": "./assets/resume.pdf",
-        "linkedinUrl": "https://www.linkedin.com/in/fernandoprado-dev",
-        "githubUrl": "https://github.com/fjprado",
-        "email": "dev.fprado@gmail.com"
-    },
-    "about": {
-        "aboutPic": "./assets/about-pic.jpg",
-        "aboutText": "Specialized in Full Stack development using web technologies, such as Microsoft Azure, C# (ASP.Net MVC, .Net Core), Typescript (Angular), Javascript (React, Node.js), PostgreSQL, MongoDB, Git, TFS, and Azure DevOps. I have a degree in Systems Analysis and Development and I am also venturing into mobile technologies using Dart (Flutter).",
-        "experiences": [
-            {
-                "area": "Full Stack Development",
-                "yoe": "3+"
-            }
-        ],
-        "education": [
-            {
-                "title": "Tech.",
-                "course": "Systems Analysis and Development",
-                "type": "Degree"
-            },
-            {
-                "title": "Tech.",
-                "course": "Business Administration",
-                "type": "Diploma"
-            }
-        ]
-    },
-    "experience": [
-        {
-            "type": "Backend Development",
-            "skill": ".Net Core",
-            "level": 5
-        },
-        {
-            "type": "Backend Development",
-            "skill": "C#",
-            "level": 5
-        },
-        {
-            "type": "Backend Development",
-            "skill": "Node.js",
-            "level": 2
-        },
-        {
-            "type": "Backend Development",
-            "skill": "Azure",
-            "level": 4
-        },
-        {
-            "type": "Backend Development",
-            "skill": "PostgreSQL",
-            "level": 4
-        },
-        {
-            "type": "Backend Development",
-            "skill": "SQL Server",
-            "level": 4
-        },
-        {
-            "type": "Backend Development",
-            "skill": "MongoDB",
-            "level": 1
-        },
-        {
-            "type": "Backend Development",
-            "skill": "Git",
-            "level": 4
-        },
-        {
-            "type": "Frontend Development",
-            "skill": "Angular",
-            "level": 4
-        },
-        {
-            "type": "Frontend Development",
-            "skill": "React",
-            "level": 3
-        },
-        {
-            "type": "Frontend Development",
-            "skill": "Javascript",
-            "level": 3
-        },
-        {
-            "type": "Frontend Development",
-            "skill": "Typescript",
-            "level": 4
-        },
-        {
-            "type": "Frontend Development",
-            "skill": "HTML",
-            "level": 5
-        },
-        {
-            "type": "Frontend Development",
-            "skill": "CSS",
-            "level": 4
-        },
-        {
-            "type": "Frontend Development",
-            "skill": "Material UI",
-            "level": 3
-        }
+  "profile": {
+    "name": "Fernando Prado",
+    "role": "Full Stack Developer",
+    "profilePic": "./assets/profile-pic.jpg",
+    "cvPath": "./assets/resume.pdf",
+    "linkedinUrl": "https://www.linkedin.com/in/fernandoprado-dev",
+    "githubUrl": "https://github.com/fjprado",
+    "email": "dev.fprado@gmail.com"
+  },
+  "about": {
+    "aboutPic": "./assets/about-pic.jpg",
+    "aboutText": "Specialized in Full Stack development using web technologies, such as Microsoft Azure, C# (ASP.Net MVC, .Net Core), Typescript (Angular), Javascript (React, Node.js), PostgreSQL, MongoDB, Git, TFS, and Azure DevOps. I have a degree in Systems Analysis and Development and I am also venturing into mobile technologies using Dart (Flutter).",
+    "experiences": [
+      {
+        "area": "Full Stack Development",
+        "yoe": "3+"
+      }
     ],
-    "projects": [
-        {
-            "name": "Project One",
-            "projectPic": null,
-            "gitHubUrl": "https://github.com/fjprado",
-            "liveDemoUrl": "https://github.com/fjprado"
-        },
-        {
-            "name": "Project 2",
-            "projectPic": null,
-            "gitHubUrl": "https://github.com/fjprado",
-            "liveDemoUrl": "https://github.com/fjprado"
-        },
-        {
-            "name": "LoL - Champs",
-            "projectPic": "./assets/lol-champs.png",
-            "gitHubUrl": "https://github.com/fjprado/lol-champs",
-            "liveDemoUrl": "https://fjprado.github.io/lol-champs"
-        }
+    "education": [
+      {
+        "title": "Tech.",
+        "course": "Systems Analysis and Development",
+        "type": "Degree"
+      },
+      {
+        "title": "Tech.",
+        "course": "Business Administration",
+        "type": "Diploma"
+      }
     ]
-    
+  },
+  "experience": [
+    {
+      "type": "Backend Development",
+      "skill": ".Net Core",
+      "level": 5
+    },
+    {
+      "type": "Backend Development",
+      "skill": "C#",
+      "level": 5
+    },
+    {
+      "type": "Backend Development",
+      "skill": "Node.js",
+      "level": 2
+    },
+    {
+      "type": "Backend Development",
+      "skill": "Azure",
+      "level": 4
+    },
+    {
+      "type": "Backend Development",
+      "skill": "PostgreSQL",
+      "level": 4
+    },
+    {
+      "type": "Backend Development",
+      "skill": "SQL Server",
+      "level": 4
+    },
+    {
+      "type": "Backend Development",
+      "skill": "MongoDB",
+      "level": 1
+    },
+    {
+      "type": "Backend Development",
+      "skill": "Git",
+      "level": 4
+    },
+    {
+      "type": "Frontend Development",
+      "skill": "Angular",
+      "level": 4
+    },
+    {
+      "type": "Frontend Development",
+      "skill": "React",
+      "level": 3
+    },
+    {
+      "type": "Frontend Development",
+      "skill": "Javascript",
+      "level": 3
+    },
+    {
+      "type": "Frontend Development",
+      "skill": "Typescript",
+      "level": 4
+    },
+    {
+      "type": "Frontend Development",
+      "skill": "HTML",
+      "level": 5
+    },
+    {
+      "type": "Frontend Development",
+      "skill": "CSS",
+      "level": 4
+    },
+    {
+      "type": "Frontend Development",
+      "skill": "Material UI",
+      "level": 3
+    }
+  ],
+  "projects": [
+    {
+      "name": "BC - Schools",
+      "projectPic": "./assets/bc-schools.png",
+      "gitHubUrl": "https://github.com/fjprado/bc-schools-ng",
+      "liveDemoUrl": "https://gray-hill-081df9310.4.azurestaticapps.net/"
+    },
+    {
+      "name": "LoL - Champs",
+      "projectPic": "./assets/lol-champs.png",
+      "gitHubUrl": "https://github.com/fjprado/lol-champs",
+      "liveDemoUrl": "https://fjprado.github.io/lol-champs"
+    },
+    {
+      "name": "Pick Up Your Squad",
+      "projectPic": null,
+      "gitHubUrl": "https://github.com/fjprado",
+      "liveDemoUrl": "https://github.com/fjprado"
+    }
+  ]
 }
