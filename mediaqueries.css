@@ -47,6 +47,10 @@
     .about-container {
         margin-top: 0;
     }
+
+    .project-container:hover {
+        transform: scale(1.05);
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -118,5 +122,9 @@
 
     .text-container {
         text-align: justify;
+    }
+
+    .project-container {
+        overflow: visible;
     }
 }
