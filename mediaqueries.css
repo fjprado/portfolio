@@ -1,7 +1,7 @@
 @media screen and (max-width: 1400px) {
-    #profile {
-        height: 83vh;
-        margin-bottom: 6rem;
+    .profile-container {
+        height: 83vh;           
+        margin-bottom: 3rem;
     }
 
     .about-container {
@@ -22,8 +22,8 @@
         margin-top: 2rem;
     }
 
-    #profile, .section__container {
-        display: block;
+    .profile-container, .section__container {
+        display: block;     
     }
 
     .arrow {
@@ -31,10 +31,11 @@
     }
 
     section, .section__container {
-        height: fit-content;
+        min-height: fit-content !important;
     }
 
     section {
+        padding-bottom: 5vh;
         margin: 0 5%;
     }
 
@@ -44,13 +45,36 @@
         margin: 0 auto 2rem;
     }
 
-    .about-container {
+    .about-container, .certifications-container {
         margin-top: 0;
     }
 
-    .project-container:hover {
+    .about-experience-container {
+        min-width: 80%;
+    }
+
+    .enhance-item:hover {
         transform: scale(1.05);
     }
+
+    .certifications-container {
+        width: 100%;
+    }
+
+    .certification-item-container {        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: 0
+    }
+}
+
+@media screen and (max-width: 750px) { 
+    .project-container {
+        overflow: visible;
+    } 
 }
 
 @media screen and (max-width: 600px) {
@@ -58,9 +82,8 @@
         height: 40vh;
     }
 
-    #profile {
-        height: 83vh;
-        margin-bottom: 7%;
+    .profile-container {
+        height: 60vh;
     }
 
     article {
@@ -73,13 +96,17 @@
     }
 
     .about-container, 
-    .contact-info-upper-container, 
     .btn-container {
         flex-wrap: wrap;
     }
 
     .contact-info-container {
         margin: 0;
+    }
+    .contact-info-upper-container {
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
     }
 
     .contact-info-container p,
@@ -108,7 +135,7 @@
     }
 
     .about-pic {
-        transform: scale(1.5) translate(0, -5%);
+        transform: scale(1.3) translate(0, -5%);
         clip-path: inset(2.75rem 2rem 1.25rem 2rem round 1rem);
     }
 
@@ -122,9 +149,17 @@
 
     .text-container {
         text-align: justify;
+    }   
+
+    .certification-item-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0
     }
 
-    .project-container {
-        overflow: visible;
-    }
+    .skills-container, .projects-container {
+        display: flex !important;
+        flex-direction: column !important;
+    }    
 }

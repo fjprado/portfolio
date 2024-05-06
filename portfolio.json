@@ -10,27 +10,37 @@
   },
   "about": {
     "aboutPic": "./assets/about-pic.jpg",
-    "aboutText": "Specialized in Full Stack development using web technologies, such as Microsoft Azure, C# (ASP.Net MVC, .Net Core), Typescript (Angular), Javascript (React, Node.js), PostgreSQL, MongoDB, Git, TFS, and Azure DevOps. I have a degree in Systems Analysis and Development and I am also venturing into mobile technologies using Dart (Flutter).",
+    "aboutText": "I am a skilled web application developer with a strong grasp of C#, JavaScript, TypeScript, and Python. I work with frameworks like .Net Core, Angular, React, Node.js, and Blazor, and understand the software development lifecycle. My expertise also includes cloud computing with Azure, Azure OpenAI, and database management for both SQL and NoSQL databases. I have advanced analytical and problem-solving skills, which help me evaluate solutions and meet project requirements effectively.</br></br>Beyond programming, I'm experienced with Git/GitHub for version control and Docker/Kubernetes for containerization. I excel at gathering requirements and content development, with strong communication skills that make collaboration seamless. I speak English and Portuguese fluently, and I am known for my teamwork and reliability.",
     "experiences": [
       {
-        "area": "Full Stack Development",
+        "area": "Full Stack Developer",
         "yoe": "3+"
+      },
+      {
+        "area": "Technical Consultant and Support",
+        "yoe": "6"
       }
     ],
     "education": [
       {
         "title": "Tech.",
         "course": "Systems Analysis and Development",
-        "type": "Degree"
+        "type": "Degree",
+        "school": "FATEC Americana University",
+        "start": "01/2012",
+        "end": "06/2015"
       },
       {
         "title": "Tech.",
         "course": "Business Administration",
-        "type": "Diploma"
+        "type": "Diploma",
+        "school": "ETEC São Paulo College",
+        "start": "01/2010",
+        "end": "06/2011"
       }
     ]
   },
-  "experience": [
+  "skills": [
     {
       "type": "Backend Development",
       "skill": ".Net Core",
@@ -44,7 +54,7 @@
     {
       "type": "Backend Development",
       "skill": "Node.js",
-      "level": 2
+      "level": 3
     },
     {
       "type": "Backend Development",
@@ -64,12 +74,17 @@
     {
       "type": "Backend Development",
       "skill": "MongoDB",
-      "level": 1
+      "level": 2
     },
     {
       "type": "Backend Development",
       "skill": "Git",
       "level": 4
+    },    
+    {
+      "type": "Backend Development",
+      "skill": "Python",
+      "level": 1
     },
     {
       "type": "Frontend Development",
@@ -105,6 +120,23 @@
       "type": "Frontend Development",
       "skill": "Material UI",
       "level": 3
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Azure Developer Associate (AZ-204)",
+      "company": "Microsoft Company",
+      "date": "In Progress"
+    },  
+    {
+      "name": "Azure AI Fundamentals (AI-900)",
+      "company": "Microsoft Company",
+      "date": "01/2024"
+    },
+    {
+      "name": "Azure Fundamentals (AZ-900)",
+      "company": "Microsoft Company",
+      "date": "12/2021"
     }
   ],
   "projects": [

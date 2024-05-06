@@ -21,7 +21,7 @@
             <div class="mobile__menu-links">
                 <ul>
                     <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                    <li><a href="#skills" onclick="toggleMenu()">Skills and Certifications</a></li>
                     <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                     <li><a href="#contact" onclick="toggleMenu()">Contact</a></li> 
                 </ul>
@@ -33,32 +33,34 @@
         <div>
             <ul class="desktop__nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills and Certifications</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>                
             </ul>
         </div>
     </nav> 
     <section id="profile">
-        <div class="section__pic-container">
-            <img 
-                class="profile-pic"
-                src="./assets/default-profile-pic.jpg" 
-                alt="Profile picture">
-        </div>
-        <div class="section__text">
-            <p class="section__text-p1">Hello, I'm </p>
-            <h1 id="profile-name" class="section__title">Your name</h1>
-            <p id="profile-role" class="section__text-p2">Your Role</p>
-            <div class="btn-container">
-                <button id="profile-download-cv" class="btn btn-color-2">Download CV</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+        <div class="profile-container">
+            <div class="section__pic-container">
+                <img 
+                    class="profile-pic enhance-item"
+                    src="./assets/default-profile-pic.jpg" 
+                    alt="Profile picture">
             </div>
-            <div id="socials-container">
-                <img class="icon linkedin-profile" src="./assets/linkedin.png" alt="My Linkedin profile">
-                <img class="icon github-profile" src="./assets/github.png" alt="My GitHub profile">
+            <div class="section__text">
+                <p class="section__text-p1">Hello, I'm </p>
+                <h1 id="profile-name" class="section__title">Your name</h1>
+                <p id="profile-role" class="section__text-p2">Your Role</p>
+                <div class="btn-container">
+                    <button id="profile-download-cv" class="btn btn-color-2">Download CV</button>
+                    <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+                </div>
+                <div id="socials-container">
+                    <img class="icon linkedin-profile" src="./assets/linkedin.png" alt="My Linkedin profile">
+                    <img class="icon github-profile" src="./assets/github.png" alt="My GitHub profile">
+                </div>
             </div>
-        </div>
+        </div>        
     </section>  
     <section id="about">
         <p class="section__text-p1">Get To Know More</p>
@@ -66,19 +68,19 @@
         <div class="section__container">
             <div class="section__pic-container">
                 <img 
-                    class="about-pic"
+                    class="about-pic enhance-item"
                     src="./assets/default-about-pic.jpg" 
                     alt="About picture">
             </div>
             <div class="about-details-container">
                 <div class="about-container">
-                    <div class="details-container about-experience-container">
+                    <div class="details-container about-experience-container enhance-item">
                         <img 
                             class="icon"
                             src="./assets/experience.png" alt="Experience icon">
                         <h3>Experience</h3>
                     </div>
-                    <div class="details-container about-education-container">
+                    <div class="details-container about-education-container enhance-item">
                         <img 
                             class="icon"
                             src="./assets/education.png" alt="Education icon">
@@ -96,13 +98,18 @@
             class="icon arrow" 
             src="./assets/arrow.png" 
             alt="Arrow icon"
-            onclick="location.href='./#experience'">
+            onclick="location.href='./#skills'">
     </section>
-    <section id="experience">
+    <section id="skills">
         <p class="section__text-p1">Explore My</p>
-        <h1 class="section__title">Experience</h1>
+        <h1 class="section__title">Skills</h1>
         <div class="experience-details-container">
             <div class="about-container skills-container">
+            </div>
+        </div>
+        <h1 class="section__title">Certifications</h1>
+        <div class="experience-details-container">
+            <div class="certifications-container">
             </div>
         </div>
         <img 
@@ -115,8 +122,8 @@
         <p class="section__text-p1">Browse My Recent</p>
         <h1 class="section__title">Projects</h1>
         <div class="experience-details-container">
-            <div class="about-container">
-                <div class="details-container project-container">
+            <div class="about-container projects-container">
+                <div class="details-container project-container enhance-item">
                     <div class="article-container">
                         <img 
                             class="project-img"
@@ -133,7 +140,7 @@
                         </button>
                     </div>
                 </div>   
-                <div class="details-container project-container">
+                <div class="details-container project-container enhance-item">
                     <div class="article-container">
                         <img 
                             class="project-img"
@@ -150,7 +157,7 @@
                         </button>
                     </div>
                 </div> 
-                <div class="details-container project-container">
+                <div class="details-container project-container enhance-item">
                     <div class="article-container">
                         <img 
                             class="project-img"
@@ -191,7 +198,7 @@
                     class="icon contact-icon" 
                     src="./assets/linkedin.png" 
                     alt="Linkedin icon" />
-                <p class="contact-linkedin"><a href="#">Linkedin</a></p>
+                <p class="contact-linkedin"><a href="#">LinkedIn</a></p>
             </div>
         </div>
     </section>

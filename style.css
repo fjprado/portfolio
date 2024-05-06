@@ -183,20 +183,22 @@ a:hover {
 
 section {
     padding-top: 4vh;
-    height: 96vh;
+    min-height: 90vh;
     margin: 0 10rem;
     box-sizing: border-box;
-    min-height: -moz-fit-content;
-    min-height: fit-content;
+}
+
+.section__container {
+    height: fit-content;
 }
 
 /* PROFILE SECTION */
 
-#profile {
+.profile-container{
     display: flex;
     justify-content: center;
     gap: 5rem;
-    height: 80vh;
+    height: 60vh;
 }
 
 .section__pic-container {
@@ -301,7 +303,7 @@ section {
     position: relative;
 }
 
-.about-container {
+.about-container{
     gap: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -313,7 +315,8 @@ section {
 }
 
 .about-container,
-.about-details-container {
+.about-details-container,
+.certifications-container {
     display: flex;
 }
 
@@ -345,7 +348,7 @@ section {
 
 /* EXPERIENCE SECTION */
 
-#experience {
+#skills {
     position: relative;
     margin-bottom: 2rem;
 }
@@ -354,6 +357,7 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .experience-sub-title {
@@ -419,6 +423,33 @@ article .icon {
     linear-gradient(rgb(32,156,5) 0 0) 0/100% no-repeat #ddd;
 }
 
+.certification-item-container {        
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.certification-item-container p {        
+    display: flex;
+    align-items: center;
+}
+
+.certifications-container {
+    flex-direction: column;
+    width: 80%;    
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.certification-item-detail {
+    display: flex;
+    gap: 1rem
+}
+
 /* PROJECTS SECTION */
 
 #projects {
@@ -432,7 +463,7 @@ article .icon {
     overflow: auto;
 }
 
-.project-container:hover {
+.enhance-item:hover {
     transform: scale(1.2);
     transition: 500ms ease;
 }

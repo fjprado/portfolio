@@ -39,6 +39,7 @@ async function getData() {
 
     /* EXPERIENCE SECTION */
     const skillSection = document.querySelector(".skills-container");
+    const certificationSection = document.querySelector(".certifications-container");
 
     /* PROJECTS SECTION */    
     const projectSection = document.querySelectorAll(".project-container");
@@ -73,7 +74,7 @@ async function getData() {
         aboutPic.src = "./assets/about-pic.jpg";
         portfolio.about.experiences.forEach(item => {
             var exp = document.createElement("p");
-            exp.innerHTML = `&#10022; ${item.yoe} years <br /> ${item.area}`;
+            exp.innerHTML = `&#10022; ${item.yoe} years - ${item.area}`;
             aboutExperience.appendChild(exp);            
         });         
         portfolio.about.education.forEach(item => {
@@ -83,8 +84,11 @@ async function getData() {
         }); 
         aboutText.innerHTML = portfolio.about.aboutText;
 
-        let skillsHtml = createSkillSection(portfolio.experience);
+        let skillsHtml = createSkillSection(portfolio.skills);
         skillSection.innerHTML = skillsHtml;
+
+        let certificationsHtml = createCertificationSection(portfolio.certifications);
+        certificationSection.innerHTML = certificationsHtml;
 
         /* Projects */
         for(let i = 0; i < portfolio.projects.length || i < 3; i++){
@@ -127,7 +131,7 @@ const createSkillSection = (skills) => {
             skillContainerHtml += `<article>
             <img 
                 class="icon"
-                src="./assets/checkmark.png" alt="Experience icon">
+                src="./assets/checkmark.png" alt="Checkmark icon">
             <div>
                 <h3>${skill.skill}</h3>
                 <div class="bar bar-progress-${skill.level}"></div>
@@ -140,4 +144,29 @@ const createSkillSection = (skills) => {
     });
 
     return skillContainerHtml;
+}
+
+const createCertificationSection = (certifications) => {
+    let certificationContainerHtml = "";
+    certifications.forEach(certification => {
+        certificationContainerHtml += `
+        <div class="details-container">
+            <div class="article-container">
+                <div class="certification-item-container">
+                    <p>
+                        <img 
+                        class="icon"
+                        src="./assets/experience.png" alt="Experience icon">
+                        <b>${certification.name}</b>
+                    </p>
+                    <div class="certification-item-detail">
+                        <p>by ${certification.company}</p> 
+                        <p>(${certification.date})</p>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    });
+
+    return certificationContainerHtml;
 }
