@@ -10,11 +10,11 @@
   },
   "about": {
     "aboutPic": "./assets/about-pic.jpg",
-    "aboutText": "I am a skilled web application developer with a strong grasp of C#, JavaScript, TypeScript, and Python. I work with frameworks like .Net Core, Angular, React, Node.js, and Blazor, and understand the software development lifecycle. My expertise also includes cloud computing with Azure, Azure OpenAI, and database management for both SQL and NoSQL databases. I have advanced analytical and problem-solving skills, which help me evaluate solutions and meet project requirements effectively.</br></br>Beyond programming, I'm experienced with Git/GitHub for version control and Docker/Kubernetes for containerization. I excel at gathering requirements and content development, with strong communication skills that make collaboration seamless. I speak English and Portuguese fluently, and I am known for my teamwork and reliability.",
+    "aboutText": "<strong>Full Stack Software Developer</strong> with extensive experience designing, developing, and maintaining scalable web and mobile applications. Proficient in <strong>C#</strong>, <strong>.NET</strong>, <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>Python</strong>, <strong>Angular</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>Blazor</strong>, with hands-on experience building cross-platform mobile applications using <strong>Ionic</strong> and <strong>Capacitor</strong>.<br><br>Experienced in <strong>Microsoft Azure</strong> cloud services, <strong>Azure OpenAI</strong>, and <strong>AI-powered application development</strong>, including solutions that leverage large language models and intelligent search. Strong background in <strong>SQL</strong> and <strong>NoSQL</strong> databases, <strong>RESTful APIs</strong>, <strong>software architecture</strong>, and the full software development lifecycle, from requirements gathering and technical design to implementation, testing, and deployment.<br><br>Skilled in modern development practices and <strong>DevOps</strong> tools, including <strong>Git</strong>, <strong>GitHub</strong>, <strong>Docker</strong>, and <strong>Kubernetes</strong>. Recognized for strong <strong>analytical and problem-solving</strong> abilities, translating complex business requirements into reliable, maintainable, and scalable technical solutions. An effective communicator and collaborative team player, fluent in <strong>English</strong> and <strong>Portuguese</strong>, with a strong commitment to code quality, continuous learning, and delivering business value.",
     "experiences": [
       {
         "area": "Full Stack Developer",
-        "yoe": "3+"
+        "yoe": "5+"
       },
       {
         "area": "Technical Consultant and Support",
@@ -23,17 +23,22 @@
     ],
     "education": [
       {
-        "title": "Tech.",
+        "title": "Postgraduate Specialization",
+        "course": "DevOps Engineering ",
+        "school": "Faculdade Focus",
+        "start": "07/2025",
+        "end": "11/2025"
+      },
+      {
+        "title": "Bachelor's degree",
         "course": "Systems Analysis and Development",
-        "type": "Degree",
         "school": "FATEC Americana University",
         "start": "01/2012",
         "end": "06/2015"
       },
       {
-        "title": "Tech.",
+        "title": "Diploma",
         "course": "Business Administration",
-        "type": "Diploma",
         "school": "ETEC São Paulo College",
         "start": "01/2010",
         "end": "06/2011"
@@ -95,6 +100,11 @@
       "type": "Frontend Development",
       "skill": "React",
       "level": 3
+    },    
+    {
+      "type": "Frontend Development",
+      "skill": "Capacitor",
+      "level": 4
     },
     {
       "type": "Frontend Development",
@@ -115,6 +125,11 @@
       "type": "Frontend Development",
       "skill": "CSS",
       "level": 4
+    },
+    {
+      "type": "Frontend Development",
+      "skill": "Ionic",
+      "level": 3
     },
     {
       "type": "Frontend Development",
@@ -151,6 +166,12 @@
       "projectPic": "./assets/lol-champs.png",
       "gitHubUrl": "https://github.com/fjprado/lol-champs",
       "liveDemoUrl": "https://fjprado.github.io/lol-champs"
+    },
+    {
+      "name": "Mountains, Let's Go",
+      "projectPic": "./assets/mountains-lets-gooo.png",
+      "gitHubUrl": "https://github.com/fjprado/mountains-lets-gooo",
+      "liveDemoUrl": "https://fjprado.github.io/mountains-lets-gooo"
     },
     {
       "name": "Pick Up Your Squad",

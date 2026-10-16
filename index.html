@@ -6,214 +6,191 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
-<body>
-    <div id="loader" class="center"></div>
+<body class="is-loading">
+    <div id="loader" class="center" role="status" aria-label="Loading"></div>
+
     <nav id="mobile__nav">
         <div class="logo">Your name</div>
         <div class="mobile__menu">
-            <div class="mobile__menu-icon" onclick="toggleMenu()">
+            <button class="mobile__menu-icon" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu-links">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            <div class="mobile__menu-links">
+            </button>
+            <div id="mobile-menu-links" class="mobile__menu-links">
                 <ul>
-                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#skills" onclick="toggleMenu()">Skills and Certifications</a></li>
-                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li> 
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills and Certifications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <nav id="desktop__nav">
         <div class="logo">Your Name</div>
-        <div>
-            <ul class="desktop__nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills and Certifications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>                
-            </ul>
-        </div>
-    </nav> 
+        <ul class="desktop__nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills and Certifications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <section id="profile">
         <div class="profile-container">
             <div class="section__pic-container">
-                <img 
-                    class="profile-pic enhance-item"
-                    src="./assets/default-profile-pic.jpg" 
-                    alt="Profile picture">
+                <img class="profile-pic enhance-item" src="./assets/default-profile-pic.jpg" alt="Profile picture">
             </div>
             <div class="section__text">
-                <p class="section__text-p1">Hello, I'm </p>
+                <p class="section__text-p1">Hello, I'm</p>
                 <h1 id="profile-name" class="section__title">Your name</h1>
                 <p id="profile-role" class="section__text-p2">Your Role</p>
                 <div class="btn-container">
-                    <button id="profile-download-cv" class="btn btn-color-2">Download CV</button>
-                    <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+                    <a id="profile-download-cv" class="btn btn-color-2" href="#" target="_blank" rel="noopener">Download CV</a>
+                    <a class="btn btn-color-1" href="#contact">Contact Info</a>
                 </div>
                 <div id="socials-container">
-                    <img class="icon linkedin-profile" src="./assets/linkedin.png" alt="My Linkedin profile">
-                    <img class="icon github-profile" src="./assets/github.png" alt="My GitHub profile">
+                    <a class="icon-link linkedin-profile" href="#" target="_blank" rel="noopener noreferrer">
+                        <img class="icon" src="./assets/linkedin.png" alt="My LinkedIn profile">
+                    </a>
+                    <a class="icon-link github-profile" href="#" target="_blank" rel="noopener noreferrer">
+                        <img class="icon" src="./assets/github.png" alt="My GitHub profile">
+                    </a>
                 </div>
             </div>
-        </div>        
-    </section>  
+        </div>
+    </section>
+
     <section id="about">
         <p class="section__text-p1">Get To Know More</p>
         <h1 class="section__title">About Me</h1>
         <div class="section__container">
             <div class="section__pic-container">
-                <img 
-                    class="about-pic enhance-item"
-                    src="./assets/default-about-pic.jpg" 
-                    alt="About picture">
+                <img class="about-pic enhance-item" src="./assets/default-about-pic.jpg" alt="About picture">
             </div>
             <div class="about-details-container">
                 <div class="about-container">
                     <div class="details-container about-experience-container enhance-item">
-                        <img 
-                            class="icon"
-                            src="./assets/experience.png" alt="Experience icon">
+                        <img class="icon" src="./assets/experience.png" alt="" aria-hidden="true">
                         <h3>Experience</h3>
                     </div>
                     <div class="details-container about-education-container enhance-item">
-                        <img 
-                            class="icon"
-                            src="./assets/education.png" alt="Education icon">
+                        <img class="icon" src="./assets/education.png" alt="" aria-hidden="true">
                         <h3>Education</h3>
                     </div>
                 </div>
                 <div class="text-container about-text">
-                    <p>
-                        About you...
-                    </p>
+                    <p>About you...</p>
                 </div>
             </div>
         </div>
-        <img 
-            class="icon arrow" 
-            src="./assets/arrow.png" 
-            alt="Arrow icon"
-            onclick="location.href='./#skills'">
+        <a class="arrow icon-link" href="#skills" aria-label="Go to skills">
+            <img class="icon" src="./assets/arrow.png" alt="">
+        </a>
     </section>
+
     <section id="skills">
         <p class="section__text-p1">Explore My</p>
         <h1 class="section__title">Skills</h1>
         <div class="experience-details-container">
-            <div class="about-container skills-container">
-            </div>
+            <div class="about-container skills-container"></div>
         </div>
         <h1 class="section__title">Certifications</h1>
         <div class="experience-details-container">
-            <div class="certifications-container">
-            </div>
+            <div class="certifications-container"></div>
         </div>
-        <img 
-            class="icon arrow" 
-            src="./assets/arrow.png" 
-            alt="Arrow icon"
-            onclick="location.href='./#projects'">
+        <a class="arrow icon-link" href="#projects" aria-label="Go to projects">
+            <img class="icon" src="./assets/arrow.png" alt="">
+        </a>
     </section>
+
     <section id="projects">
         <p class="section__text-p1">Browse My Recent</p>
         <h1 class="section__title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-container projects-container">
-                <div class="details-container project-container enhance-item">
-                    <div class="article-container">
-                        <img 
-                            class="project-img"
-                            src="./assets/default-project-pic.png" 
-                            alt="Project 1">
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project 1</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn project-repo">
-                            GitHub
-                        </button>
-                        <button class="btn btn-color-2 project-btn project-demo">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>   
-                <div class="details-container project-container enhance-item">
-                    <div class="article-container">
-                        <img 
-                            class="project-img"
-                            src="./assets/default-project-pic.png" 
-                            alt="Project 2">
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project 2</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn project-repo">
-                            GitHub
-                        </button>
-                        <button class="btn btn-color-2 project-btn project-demo">
-                            Live Demo
-                        </button>
-                    </div>
-                </div> 
-                <div class="details-container project-container enhance-item">
-                    <div class="article-container">
-                        <img 
-                            class="project-img"
-                            src="./assets/default-project-pic.png" 
-                            alt="Project 3">
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project 3</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn project-repo">
-                            GitHub
-                        </button>
-                        <button class="btn btn-color-2 project-btn project-demo">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>  
-            </div>        
-        </div>
-        <img 
-            class="icon arrow" 
-            src="./assets/arrow.png" 
-            alt="Arrow icon"
-            onclick="location.href='./#contact'">
+        <div class="projects-grid"></div>
+        <a class="arrow icon-link" href="#contact" aria-label="Go to contact">
+            <img class="icon" src="./assets/arrow.png" alt="">
+        </a>
     </section>
+
     <section id="contact">
         <p class="section__text-p1">Get in Touch</p>
         <h1 class="section__title">Contact Me</h1>
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
-                <img 
-                    class="icon contact-icon email-icon" 
-                    src="./assets/email.png" 
-                    alt="Email icon" />
+                <img class="icon contact-icon email-icon" src="./assets/email.png" alt="" aria-hidden="true">
                 <p class="contact-email"><a href="#">youremail@mail.com</a></p>
             </div>
             <div class="contact-info-container">
-                <img 
-                    class="icon contact-icon" 
-                    src="./assets/linkedin.png" 
-                    alt="Linkedin icon" />
-                <p class="contact-linkedin"><a href="#">LinkedIn</a></p>
+                <img class="icon contact-icon" src="./assets/linkedin.png" alt="" aria-hidden="true">
+                <p class="contact-linkedin"><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
             </div>
         </div>
     </section>
+
     <footer>
         <nav>
-            <div class="nav-links-container">
-                <ul class="desktop__nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>                
-                </ul>
-            </div>            
+            <ul class="desktop__nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills and Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
-        <p></p>
+        <p class="copyright"></p>
     </footer>
+
+    <!-- Templates rendered by script.js from portfolio.json -->
+    <template id="skill-group-template">
+        <div class="details-container">
+            <h2 class="experience-sub-title"></h2>
+            <div class="article-container"></div>
+        </div>
+    </template>
+
+    <template id="skill-template">
+        <article class="skill-item">
+            <img class="icon" src="./assets/checkmark.png" alt="" aria-hidden="true">
+            <div>
+                <h3 class="skill-name"></h3>
+                <div class="bar" role="img"></div>
+            </div>
+        </article>
+    </template>
+
+    <template id="certification-template">
+        <div class="details-container">
+            <div class="certification-item-container">
+                <p>
+                    <img class="icon" src="./assets/experience.png" alt="" aria-hidden="true">
+                    <b class="certification-name"></b>
+                </p>
+                <div class="certification-item-detail">
+                    <p class="certification-company"></p>
+                    <p class="certification-date"></p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="project-template">
+        <article class="project-card">
+            <div class="project-card__media">
+                <img class="project-card__img" src="./assets/default-project-pic.png" alt="" loading="lazy">
+            </div>
+            <div class="project-card__body">
+                <h2 class="project-card__title"></h2>
+                <p class="project-card__description"></p>
+                <ul class="project-card__tags"></ul>
+                <div class="btn-container project-card__actions">
+                    <a class="btn btn-color-2 project-btn project-repo" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="btn btn-color-2 project-btn project-demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+            </div>
+        </article>
+    </template>
 </body>
 </html>

@@ -1,11 +1,11 @@
 @media screen and (max-width: 1400px) {
     .profile-container {
-        height: 83vh;           
+        height: 83vh;
         margin-bottom: 3rem;
     }
 
     .about-container {
-       flex-wrap: wrap;
+        flex-wrap: wrap;
     }
 }
 
@@ -18,20 +18,22 @@
         display: flex;
     }
 
-    #experience, .experience-details-container {
+    .experience-details-container {
         margin-top: 2rem;
     }
 
-    .profile-container, .section__container {
-        display: block;     
+    .profile-container,
+    .section__container {
+        display: block;
     }
 
     .arrow {
         display: none;
     }
 
-    section, .section__container {
-        min-height: fit-content !important;
+    section,
+    .section__container {
+        min-height: fit-content;
     }
 
     section {
@@ -45,7 +47,8 @@
         margin: 0 auto 2rem;
     }
 
-    .about-container, .certifications-container {
+    .about-container,
+    .certifications-container {
         margin-top: 0;
     }
 
@@ -61,24 +64,19 @@
         width: 100%;
     }
 
-    .certification-item-container {        
-        display: flex;
+    .certification-item-container {
         flex-direction: column;
-        align-items: center;
-        align-content: center;
-        flex-wrap: wrap;
-        gap: 0
+        gap: 0;
+    }
+
+    .projects-grid {
+        margin-bottom: 2rem;
     }
 }
 
-@media screen and (max-width: 750px) { 
-    .project-container {
-        overflow: visible;
-    } 
-}
-
 @media screen and (max-width: 600px) {
-    #contact, footer {
+    #contact,
+    footer {
         height: 40vh;
     }
 
@@ -86,7 +84,7 @@
         height: 60vh;
     }
 
-    article {
+    .skill-item {
         font-size: 1rem;
     }
 
@@ -95,7 +93,7 @@
         margin-bottom: 2rem;
     }
 
-    .about-container, 
+    .about-container,
     .btn-container {
         flex-wrap: wrap;
     }
@@ -103,9 +101,8 @@
     .contact-info-container {
         margin: 0;
     }
+
     .contact-info-upper-container {
-        flex-wrap: wrap;
-        display: flex;
         flex-direction: column;
     }
 
@@ -118,7 +115,7 @@
         font-size: 1rem;
     }
 
-    .logo { 
+    .logo {
         font-size: 1.5rem;
     }
 
@@ -149,17 +146,19 @@
 
     .text-container {
         text-align: justify;
-    }   
-
-    .certification-item-detail {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0
     }
 
-    .skills-container, .projects-container {
-        display: flex !important;
-        flex-direction: column !important;
-    }    
+    .certification-item-detail {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .project-card__title {
+        font-size: 1.2rem;
+    }
 }

@@ -1,172 +1,198 @@
-function toggleMenu(){
-    const menu = document.querySelector(".mobile__menu-links");
-    const icon = document.querySelector(".mobile__menu-icon");
+const DEFAULT_PROJECT_PIC = "./assets/default-project-pic.png";
+const IMAGE_WAIT_TIMEOUT_MS = 3000;
 
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+/* MOBILE MENU */
+
+function initMobileMenu() {
+    const icon = $(".mobile__menu-icon");
+    const menu = $(".mobile__menu-links");
+
+    const setOpen = (open) => {
+        menu.classList.toggle("open", open);
+        icon.classList.toggle("open", open);
+        icon.setAttribute("aria-expanded", String(open));
+    };
+
+    icon.addEventListener("click", () => setOpen(!menu.classList.contains("open")));
+    $$("a", menu).forEach(link => link.addEventListener("click", () => setOpen(false)));
 }
 
-document.onreadystatechange = () => { 
-    if (document.readyState !== "complete") {
-        document.querySelector("body").style.visibility = "hidden";
-        document.querySelector("#loader").style.visibility = "visible";
-    } else {        
-        getData();
-        setTimeout(() => {
-            document.querySelector("body").style.visibility = "visible";
-            document.querySelector("#loader").style.display = "none";
-        }, 700);        
-    }
-}
+/* HELPERS */
 
-async function getData() {  
-    /// ELEMENTS
-    const topName = document.querySelectorAll(".logo");
+const cloneTemplate = (id) => document.getElementById(id).content.firstElementChild.cloneNode(true);
 
-    /* PROFILE SECTION */ 
-    const profilePic = document.querySelector(".profile-pic");
-    const profileName = document.querySelector("#profile-name");
-    const profileRole = document.querySelector("#profile-role");
-    const profileDownloadCv = document.querySelector("#profile-download-cv");
-    const profileLinkedin = document.querySelectorAll(".linkedin-profile");
-    const profileGitHub = document.querySelector(".github-profile");
+const setLink = (element, url) => {
+    if (url) element.href = url;
+    else element.remove();
+};
 
-    /* ABOUT SECTION */
-    const aboutPic = document.querySelector(".about-pic");
-    const aboutExperience = document.querySelector(".about-experience-container");
-    const aboutEducation = document.querySelector(".about-education-container");
-    const aboutText = document.querySelector(".about-text p");
+const groupBy = (items, key) => items.reduce((groups, item) => {
+    (groups[item[key]] ??= []).push(item);
+    return groups;
+}, {});
 
-    /* EXPERIENCE SECTION */
-    const skillSection = document.querySelector(".skills-container");
-    const certificationSection = document.querySelector(".certifications-container");
+const pageLoaded = () => new Promise(resolve => {
+    if (document.readyState === "complete") resolve();
+    else window.addEventListener("load", resolve, { once: true });
+});
 
-    /* PROJECTS SECTION */    
-    const projectSection = document.querySelectorAll(".project-container");
-
-    /* CONTACT SECTION */
-    const contactEmail = document.querySelector(".contact-email a");
-    const contactLinkedin = document.querySelector(".contact-linkedin a");
-
-    /* FOOTER SECTION */
-    const footerCopyright = document.querySelector("footer p");
-       
-    const data = await fetch('./portfolio.json');
-    const portfolio = await data.json();
-    if(portfolio){
-        topName.forEach(x => x.innerHTML = portfolio.profile.name);
-    
-        /* Profile */
-        profilePic.src = portfolio.profile.profilePic;
-        profileName.innerHTML = portfolio.profile.name;
-        profileRole.innerHTML = portfolio.profile.role;
-        profileDownloadCv.addEventListener('click', () => {
-            window.open(portfolio.profile.cvPath);
-        });
-        profileLinkedin.forEach(x => x.addEventListener('click', () => {
-            window.open(portfolio.profile.linkedinUrl);
+// Waits for eagerly loaded images (e.g. profile pictures set from JSON) so the page reveals fully drawn.
+const imagesLoaded = () => {
+    const pending = $$("img:not([loading='lazy'])")
+        .filter(img => !img.complete)
+        .map(img => new Promise(resolve => {
+            img.addEventListener("load", resolve, { once: true });
+            img.addEventListener("error", resolve, { once: true });
         }));
-        profileGitHub.addEventListener('click', () => {
-            window.open(portfolio.profile.githubUrl);
-        })
-    
-        /* About */
-        aboutPic.src = "./assets/about-pic.jpg";
-        portfolio.about.experiences.forEach(item => {
-            var exp = document.createElement("p");
-            exp.innerHTML = `&#10022; ${item.yoe} years - ${item.area}`;
-            aboutExperience.appendChild(exp);            
-        });         
-        portfolio.about.education.forEach(item => {
-            var edu = document.createElement("p");
-            edu.innerHTML = `&#10022; ${item.title} ${item.course} ${item.type}`;
-            aboutEducation.appendChild(edu);            
-        }); 
-        aboutText.innerHTML = portfolio.about.aboutText;
+    const timeout = new Promise(resolve => setTimeout(resolve, IMAGE_WAIT_TIMEOUT_MS));
+    return Promise.race([Promise.all(pending), timeout]);
+};
 
-        let skillsHtml = createSkillSection(portfolio.skills);
-        skillSection.innerHTML = skillsHtml;
+/* RENDERERS */
 
-        let certificationsHtml = createCertificationSection(portfolio.certifications);
-        certificationSection.innerHTML = certificationsHtml;
+function renderProfile(profile) {
+    document.title = `${profile.name} | Portfolio`;
+    $$(".logo").forEach(logo => logo.textContent = profile.name);
 
-        /* Projects */
-        for(let i = 0; i < portfolio.projects.length || i < 3; i++){
-            projectSection[i].querySelector(".project-img").src = portfolio.projects[i].projectPic ?? "./assets/default-project-pic.png";
-            projectSection[i].querySelector(".project-title").innerHTML = portfolio.projects[i].name;
-            projectSection[i].querySelector(".project-repo").addEventListener('click', () => {
-                window.open(portfolio.projects[i].gitHubUrl)
+    $(".profile-pic").src = profile.profilePic;
+    $("#profile-name").textContent = profile.name;
+    $("#profile-role").textContent = profile.role;
+    $("#profile-download-cv").href = profile.cvPath;
+    $(".linkedin-profile").href = profile.linkedinUrl;
+    $(".github-profile").href = profile.githubUrl;
+}
+
+function renderAbout(about) {
+    $(".about-pic").src = about.aboutPic;
+
+    const experience = $(".about-experience-container");
+    about.experiences.forEach(({ yoe, area }) => {
+        const p = document.createElement("p");
+        p.textContent = `✦ ${yoe} years - ${area}`;
+        experience.appendChild(p);
+    });
+
+    const education = $(".about-education-container");
+    about.education.forEach(({ title, course }) => {
+        const p = document.createElement("p");
+        p.textContent = `✦ ${title} in ${course}`;
+        education.appendChild(p);
+    });
+
+    // aboutText intentionally allows simple HTML such as <br>.
+    $(".about-text p").innerHTML = about.aboutText;
+}
+
+function renderSkills(skills) {
+    const container = $(".skills-container");
+
+    Object.entries(groupBy(skills, "type")).forEach(([type, groupSkills]) => {
+        const group = cloneTemplate("skill-group-template");
+        $(".experience-sub-title", group).textContent = type;
+
+        const list = $(".article-container", group);
+        groupSkills.forEach(({ skill, level }) => {
+            const item = cloneTemplate("skill-template");
+            const bar = $(".bar", item);
+            $(".skill-name", item).textContent = skill;
+            bar.classList.add(`bar-progress-${level}`);
+            bar.setAttribute("aria-label", `Level ${level} of 5`);
+            list.appendChild(item);
+        });
+
+        container.appendChild(group);
+    });
+}
+
+function renderCertifications(certifications) {
+    const container = $(".certifications-container");
+
+    certifications.forEach(({ name, company, date }) => {
+        const item = cloneTemplate("certification-template");
+        $(".certification-name", item).textContent = name;
+        $(".certification-company", item).textContent = `by ${company}`;
+        $(".certification-date", item).textContent = `(${date})`;
+        container.appendChild(item);
+    });
+}
+
+function renderProjects(projects) {
+    const container = $(".projects-grid");
+
+    projects.forEach(({ name, projectPic, description, tags, gitHubUrl, liveDemoUrl }) => {
+        const card = cloneTemplate("project-template");
+
+        const img = $(".project-card__img", card);
+        img.src = projectPic || DEFAULT_PROJECT_PIC;
+        img.alt = `${name} screenshot`;
+        img.addEventListener("error", () => img.src = DEFAULT_PROJECT_PIC, { once: true });
+
+        $(".project-card__title", card).textContent = name;
+
+        const descriptionEl = $(".project-card__description", card);
+        if (description) descriptionEl.textContent = description;
+        else descriptionEl.remove();
+
+        const tagList = $(".project-card__tags", card);
+        if (tags?.length) {
+            tags.forEach(tag => {
+                const li = document.createElement("li");
+                li.textContent = tag;
+                tagList.appendChild(li);
             });
-            projectSection[i].querySelector(".project-demo").addEventListener('click', () => {
-                window.open(portfolio.projects[i].liveDemoUrl)
-            });
+        } else {
+            tagList.remove();
         }
 
-        /* Contact */
-        contactEmail.href = `mailto:${portfolio.profile.email}`;
-        contactEmail.innerHTML = portfolio.profile.email;
-        contactLinkedin.href = portfolio.profile.linkedinUrl;
+        setLink($(".project-repo", card), gitHubUrl);
+        setLink($(".project-demo", card), liveDemoUrl);
 
-        /* Footer */
-        let currentYear = new Date().getFullYear();
-        footerCopyright.innerHTML = `Copyright &#169; ${currentYear} ${portfolio.profile.name}. All Rights Reserved.`
-    }    
-}
-
-const createSkillSection = (skills) => {
-    const groupedSkills = skills.reduce((group, expItem) => {
-        const { type } = expItem;
-        group[type] = group[type] ?? [];
-        group[type].push({skill: expItem.skill, level: expItem.level});
-        return group;
-      }, {});
-
-    let skillContainerHtml = "";
-    Object.keys(groupedSkills).forEach(groupSkill => {
-        skillContainerHtml += `<div class="details-container">
-        <h2 class="experience-sub-title">${groupSkill}</h2>
-        <div class="article-container">`
-
-        Object.values(groupedSkills[groupSkill]).forEach(skill => {
-            skillContainerHtml += `<article>
-            <img 
-                class="icon"
-                src="./assets/checkmark.png" alt="Checkmark icon">
-            <div>
-                <h3>${skill.skill}</h3>
-                <div class="bar bar-progress-${skill.level}"></div>
-            </div>
-        </article>`
-        });
-
-        skillContainerHtml += `</div>
-        </div>`
+        container.appendChild(card);
     });
-
-    return skillContainerHtml;
 }
 
-const createCertificationSection = (certifications) => {
-    let certificationContainerHtml = "";
-    certifications.forEach(certification => {
-        certificationContainerHtml += `
-        <div class="details-container">
-            <div class="article-container">
-                <div class="certification-item-container">
-                    <p>
-                        <img 
-                        class="icon"
-                        src="./assets/experience.png" alt="Experience icon">
-                        <b>${certification.name}</b>
-                    </p>
-                    <div class="certification-item-detail">
-                        <p>by ${certification.company}</p> 
-                        <p>(${certification.date})</p>
-                    </div>
-                </div>
-            </div>
-        </div>`
-    });
-
-    return certificationContainerHtml;
+function renderContact(profile) {
+    const email = $(".contact-email a");
+    email.href = `mailto:${profile.email}`;
+    email.textContent = profile.email;
+    $(".contact-linkedin a").href = profile.linkedinUrl;
 }
+
+function renderFooter(profile) {
+    const year = new Date().getFullYear();
+    $("footer .copyright").textContent = `Copyright © ${year} ${profile.name}. All Rights Reserved.`;
+}
+
+/* INIT */
+
+async function loadPortfolio() {
+    const response = await fetch("./portfolio.json");
+    if (!response.ok) throw new Error(`Failed to load portfolio.json (${response.status})`);
+    return response.json();
+}
+
+async function init() {
+    initMobileMenu();
+
+    try {
+        const portfolio = await loadPortfolio();
+        renderProfile(portfolio.profile);
+        renderAbout(portfolio.about);
+        renderSkills(portfolio.skills);
+        renderCertifications(portfolio.certifications);
+        renderProjects(portfolio.projects);
+        renderContact(portfolio.profile);
+        renderFooter(portfolio.profile);
+    } catch (error) {
+        console.error(error);
+    }
+
+    await pageLoaded();
+    await imagesLoaded();
+    document.body.classList.remove("is-loading");
+}
+
+init();
